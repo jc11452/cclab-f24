@@ -229,8 +229,7 @@ function stars() {
 }
 
 function keyPressed() {
-    if (key === " ") {
-        // Check for spacebar key
+    if (key === "s") {
         let randomColor = random(starColors);
         // Create a star at the current eye position
         starsArray.push({
