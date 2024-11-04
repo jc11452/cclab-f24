@@ -1,5 +1,3 @@
-console.log("this thing works!!")
-
 let xPositionShape = [];
 let yPositionShape = [];
 let sizeShape = [];
