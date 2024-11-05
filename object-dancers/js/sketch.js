@@ -22,8 +22,6 @@ class NovaDancer {
     this.angle = 0;
     this.bounce = 0;
     this.bodyTwist = 0;
-    this.hipSwing = 0;
-    this.headTilt = 0;
     this.headSideToSide = 0;
     this.leftArmSwing = 0;
     this.rightArmSwing = 0;
@@ -34,8 +32,6 @@ class NovaDancer {
   update() {
     this.bounce = sin(frameCount * 0.1) * 5;
     this.bodyTwist = sin(frameCount * 0.05) * 5;
-    this.hipSwing = cos(frameCount * 0.05) * 2.5;
-    this.headTilt = sin(frameCount * 0.08) * 10;
     this.headSideToSide = cos(frameCount * 0.05) * 2.5;
     this.leftArmSwing = sin(frameCount * 0.1) * 20;
     this.rightArmSwing = sin(frameCount * 0.1 + PI / 3) * 20;
@@ -52,13 +48,12 @@ class NovaDancer {
     stroke(255, 150, 150);
     push();
     rotate(radians(this.bodyTwist));
-    line(this.hipSwing, 0, 0, -50);
+    line(0, 0, 0, -50);
     pop();
 
     // Head
     push();
     translate(this.headSideToSide, -60);
-    rotate(radians(this.headTilt));
     fill(255, 200, 200);
     ellipse(0, 0, 30);
     pop();
@@ -66,10 +61,9 @@ class NovaDancer {
     // Left Arm
     stroke(200, 150, 255);
     push();
-    rotate(radians(-this.leftArmSwing));
+    rotate(radians(this.leftArmSwing));
     line(0, -35, -20, -20);
     translate(-20, -20);
-    rotate(radians(this.leftArmSwing * 0.3));
     line(0, 0, -15, 15);
     fill(255, 200, 200);
     ellipse(-15, 15, 6, 6);
@@ -80,7 +74,6 @@ class NovaDancer {
     rotate(radians(this.rightArmSwing));
     line(0, -35, 20, -20);
     translate(20, -20);
-    rotate(radians(-this.rightArmSwing * 0.3));
     line(0, 0, 15, 15);
     fill(255, 200, 200);
     ellipse(15, 15, 6, 6);
@@ -93,7 +86,6 @@ class NovaDancer {
     rotate(radians(-15));
     line(0, 0, -10, 40);
     translate(-10, 40);
-    rotate(radians(5));
     line(0, 0, -10, 30);
     fill(255, 200, 200);
     ellipse(-10, 30, 6, 6);
@@ -105,7 +97,6 @@ class NovaDancer {
     rotate(radians(15));
     line(0, 0, 10, 40);
     translate(10, 40);
-    rotate(radians(-5));
     line(0, 0, 10, 30);
     fill(255, 200, 200);
     ellipse(10, 30, 6, 6);
@@ -118,19 +109,6 @@ class NovaDancer {
     ellipse(150, 150, 30, 20); // hip
     ellipse(150, 117.5, 27, 15); // chest
     pop();
-
-    this.drawReferenceShapes();
     pop();
-  }
-
-  drawReferenceShapes() {
-    noFill();
-    stroke(255, 0, 0);
-    line(-5, 0, 5, 0);
-    line(0, -5, 0, 5);
-    stroke(255);
-    rect(-100, -100, 200, 200);
-    fill(255);
-    stroke(0);
   }
 }
