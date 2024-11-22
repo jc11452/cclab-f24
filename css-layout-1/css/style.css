@@ -1,0 +1,36 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+h1 {
+  color: #ae235e;
+}
+
+.box{
+  border: 1px dotted black;
+  margin: 10px;
+  padding: 10px;
+  background-color: aliceblue;
+}
+
+.box2{
+  position: absolute; /* in relation to web browser */
+  left: 100px;
+  top:0px;
+
+}
+.box3{
+  position:fixed; /* in relation to window */
+  right: 50px;
+  bottom: 50px;
+}
+.box4{
+  position: relative; /* in relation to its original position */
+  left:10px;
+  top:-20px;
+}

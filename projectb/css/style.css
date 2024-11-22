@@ -1,0 +1,38 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+.main-container{
+  background-color: bisque;
+}
+
+.headline-container{
+  background-color: aquamarine;
+  text-align: center;
+}
+
+.center-container{
+  background-color: chartreuse;
+}
+
+.description-container{
+  background-color: coral;
+  display: flex;
+  justify-content: center;
+}
+
+p{
+  background-color: cornflowerblue;
+  margin:4px;
+  max-width:300px;
+}
+
+canvas{
+  margin: auto;
+}
+
