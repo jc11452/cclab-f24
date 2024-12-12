@@ -1,0 +1,38 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', monospace;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centers everything vertically */
+    min-height: 100vh;
+    text-align: center; /* Centers the text content */
+  }
+  
+  h1 {
+    font-size: 6em; /* Super large title */
+    letter-spacing: 5px; /* Adds spacing between letters for a dramatic effect */
+    margin: 20px 0;
+    text-transform: uppercase; /* Makes all letters uppercase */
+  }
+  
+  .button-link {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 20px 0;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+  }
+  
+  .button-link:hover {
+    background-color: #fff;
+    color: #000;
+  }
+  
