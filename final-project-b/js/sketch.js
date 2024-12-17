@@ -106,7 +106,6 @@ function mousePressed() {
     if (d < shape.size / 2) {
       // Combust the shape
       shape.combust();
-      break; // Only combust one shape per click
     }
   }
 }
@@ -208,7 +207,7 @@ class ShapeGenerator {
   }
 
   update() {
-    this.x += (this.targetX - this.x) * 0.02;
+    this.x += (this.targetX - this.x) * 0.02; //speed
     this.y += (this.targetY - this.y) * 0.02;
 
     // Check distance from center
