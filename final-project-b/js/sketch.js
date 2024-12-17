@@ -80,9 +80,9 @@ function draw() {
   if (shapes.length < numShapes) {
     // Check if enough time has passed since the last shape was added
     let currentTime = millis();
-    let timeSinceLastShape = currentTime - (startTime + (shapes.length * 7000));
+    let timeSinceLastShape = currentTime - (startTime + (shapes.length * 3000));
 
-    if (timeSinceLastShape >= 2000) {
+    if (timeSinceLastShape >= 3000) {
       // Generate random positions well outside the canvas boundaries
       let xPos = random(width * -1.5, width * 2); // Ensure starting outside canvas (left/right)
       let yPos = random(height * -1.5, height * 2); // Ensure starting outside canvas (top/bottom)
