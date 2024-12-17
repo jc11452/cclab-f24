@@ -98,6 +98,19 @@ function draw() {
   }
 }
 
+function mousePressed() {
+  for (let i = shapes.length - 1; i >= 0; i--) {
+    let shape = shapes[i];
+    // Check if mouse is over the shape
+    let d = dist(mouseX, mouseY, shape.x, shape.y);
+    if (d < shape.size / 2) {
+      // Combust the shape
+      shape.combust();
+      break; // Only combust one shape per click
+    }
+  }
+}
+
 function radialGradient(x, y, maxRadius, bloomFactor) {
   let startColor = color(0, 0, 0);
   let endColor = color(171, 209, 151);
@@ -117,19 +130,6 @@ function radialGradient(x, y, maxRadius, bloomFactor) {
   fill(lerpedColor);
   rectMode(CENTER);
   rect(width / 2, height / 2 + 170, 800, 160);
-}
-
-function mousePressed() {
-  for (let i = shapes.length - 1; i >= 0; i--) {
-    let shape = shapes[i];
-    // Check if mouse is over the shape
-    let d = dist(mouseX, mouseY, shape.x, shape.y);
-    if (d < shape.size / 2) {
-      // Combust the shape
-      shape.combust();
-      break; // Only combust one shape per click
-    }
-  }
 }
 
 class Eruption {
@@ -188,7 +188,6 @@ class ShapeGenerator {
     this.originalX = x; // Save original position for backward movement
     this.originalY = y;
     this.shapeType = floor(random(3)); // Random shape type: 0, 1, or 2
-    this.isMovingBack = false; // Flag for backward movement
     this.currentY = y; // Initialize currentY to match the starting y position
   }
 
@@ -423,11 +422,10 @@ class Particle {
     this.x += this.speedX; // Update x position
     this.y += this.speedY; // Update y position
 
-    // Optional: reset particles when they move off-screen
-    if (this.x > width) this.x = 0;
-    if (this.x < 0) this.x = width;
-    if (this.y > height) this.y = 0;
-    if (this.y < 0) this.y = height;
+    if (this.x > width) { this.x = 0; }
+    if (this.x < 0) { this.x = width; }
+    if (this.y > height) { this.y = 0; }
+    if (this.y < 0) { this.y = height; }
   }
 
   display() {
