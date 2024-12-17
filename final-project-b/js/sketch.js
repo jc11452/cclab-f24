@@ -9,7 +9,6 @@ let particles = [];
 let shapes = [];
 let eruptions = []; // New array to track shape eruptions
 let numShapes = 7;
-let delay = 4000; // 4 seconds in milliseconds
 let startTime;
 
 
@@ -83,7 +82,7 @@ function draw() {
     let currentTime = millis();
     let timeSinceLastShape = currentTime - (startTime + (shapes.length * 7000));
 
-    if (timeSinceLastShape >= 3) {
+    if (timeSinceLastShape >= 2000) {
       // Generate random positions well outside the canvas boundaries
       let xPos = random(width * -1.5, width * 2); // Ensure starting outside canvas (left/right)
       let yPos = random(height * -1.5, height * 2); // Ensure starting outside canvas (top/bottom)
